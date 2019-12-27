@@ -1,7 +1,7 @@
 {% extends "layout.html"%}
 {% from "macro/common/input.html" import basicInput %}
-{% from "macro/common/button.html" import confirmButton %}
-{% from "macro/common/select.html" import basicSelect %}
+{% from "macro/common/button.html" import confirmButton, cancelButton %}
+{% from "macro/common/select.html" import basicSelect%}
 
 {% block title %}
 회원가입
@@ -12,20 +12,31 @@
         rel="stylesheet"
         href="{{ url_for('static', filename='css/user/login.css')}}"
 />
+<link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/user/join.css')}}"
+/>
 {% endblock %}
 
 {% block script %}{% endblock %}
 
+
 {% block body %}
+{% if errorMsg is defined %}
+<script type="text/javascript">
+    alert("{{errorMsg}}")
+</script>
+{% endif %}
+
 <div class="title-wrap">
     <span class="title">Join Us</span>
 </div>
-<form class="form-wrap" action="/user/login" method="POST">
+<form class="form-wrap" action="/user/join" method="POST">
     <div class="input-wrap">
-        {{ basicInput("", "email", "email", "email", "login-input") }}
+        {{ basicInput("", "email", "email", "email", "login-input", True) }}
     </div>
     <div class="input-wrap">
-        {{ basicInput("", "password", "password", "password", "login-input") }}
+        {{ basicInput("", "password", "password", "password", "login-input", True) }}
     </div>
     <div class="input-wrap">
         {{ basicInput("", "text", "first_name", "first_name", "login-input") }}
@@ -38,11 +49,11 @@
         {{ basicSelect(genderArr, "gender", "join-select") }}
     </div>
     <div class="input-wrap">
-        {{ confirmButton("LOGIN", "submit", "submit-btn") }}
+        {{ confirmButton("JOIN", "submit", "submit-btn") }}
+    </div>
+    <div class="input-wrap">
+        {% set onClick = "window.location.href='/login'"%}
+        {{ cancelButton("CANCEL", "button", "cancel-btn", onClick) }}
     </div>
 </form>
-<div class="join-us-wrap">
-    <span>회원이 되고 싶으신가요?&nbsp;&nbsp;</span>
-    <a href="#">회원가입</a>
-</div>
 {% endblock %}

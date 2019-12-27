@@ -1,3 +1,7 @@
 {% macro confirmButton(text, type, class) %}
     <button type="{{type}}" class="basic {{class}}">{{text}}</button>
 {% endmacro %}
+
+{% macro cancelButton(text, type, class, onclick) %}
+    <button type="{{type}}" class="basic {{class}}" onclick="{{onclick}}">{{text}}</button>
+{% endmacro %}

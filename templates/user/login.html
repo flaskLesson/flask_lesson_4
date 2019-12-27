@@ -22,10 +22,10 @@
 </div>
 <form class="form-wrap" action="/user/login" method="POST">
     <div class="input-wrap">
-        {{ basicInput("", "email", "email", "email", "login-input") }}
+        {{ basicInput(email, "email", "email", "email", "login-input", True) }}
     </div>
     <div class="input-wrap margin30px">
-        {{ basicInput("", "password", "password", "password", "login-input") }}
+        {{ basicInput("", "password", "password", "password", "login-input", True) }}
     </div>
     <div class="input-wrap">
         {{ confirmButton("LOGIN", "submit", "submit-btn") }}

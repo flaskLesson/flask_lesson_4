@@ -14,7 +14,7 @@ body.center {
   width: calc(100% - 20px);
   height: calc(100% - 40px);
   max-width: 430px;
-  max-height: 600px;
+  min-height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -72,6 +72,7 @@ body.center {
 .input-wrap .submit-btn {
   width: 88%;
   height: 50px;
+  background-color: #2980b9;
 }
 
 .input-wrap.margin30px {

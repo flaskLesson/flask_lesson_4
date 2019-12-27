@@ -1,3 +1,7 @@
-{% macro basicInput(val, type, name, placeholder, class) %}
-    <input class="basic {{class}}" name="{{name}}" type="{{type}}" placeholder="{{placeholder}}" val="{{val}}"/>
+{% macro basicInput(val, type, name, placeholder, class, isRequired=False) %}
+    {% if isRequired %}
+        <input class="basic {{class}}" name="{{name}}" type="{{type}}" placeholder="{{placeholder}}" value="{{val}}" required/>
+    {% else %}
+        <input class="basic {{class}}" name="{{name}}" type="{{type}}" placeholder="{{placeholder}}" value="{{val}}"/>
+    {% endif %}
 {% endmacro %}

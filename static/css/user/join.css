@@ -1,0 +1,13 @@
+select.join-select{
+    width: 88%;
+    height: 50px;
+    border: 2px solid #95a5a6;
+    padding: 4px 18px 4px 18px;
+    background-color: #fff;
+}
+
+button.cancel-btn {
+  width: 88%;
+  height: 50px;
+  background-color: #eb2f06;
+}

@@ -1,0 +1,7 @@
+{% macro basicSelect(options, name, class) %}
+<select class="basic {{class}}" name="{{name}}">
+    {% for option in options %}
+    <option value="{{option}}">{{option}}</option>
+    {% endfor %}
+</select>
+{% endmacro %}

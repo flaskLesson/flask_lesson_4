@@ -37,12 +37,17 @@ db.create_all()
 
 @app.route('/')
 @app.route('/login')
-def index():
+def login():
     return render_template('user/login.html')
 
 
+@app.route('/join')
+def join():
+    return render_template('user/join.html')
+
+
 @app.route("/user/login", methods=["POST"])
-def login():
+def checkUser():
     if request.method == 'POST':
         req = request.form
 

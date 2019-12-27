@@ -1,0 +1,42 @@
+{% extends "layout.html"%}
+{% from "macro/common/input.html" import basicInput %}
+{% from "macro/common/button.html" import confirmButton %}
+
+{% block title %}
+로그인
+{% endblock %}
+
+{% block link %}
+<link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/user/login.css')}}"
+/>
+{% endblock %}
+
+{% block script %}{% endblock %}
+
+{% block body %}
+<section class="item-container login_bg center">
+    <article class="item-box">
+        <div class="title-wrap">
+            <span class="title">Login</span>
+            <span class="sub-title">Welcome to my website</span>
+        </div>
+        <form class="form-wrap" action="/user/login" method="POST">
+            <div class="input-wrap">
+                {{ basicInput("", "email", "email", "email", "login-input") }}
+            </div>
+            <div class="input-wrap margin30px">
+                {{ basicInput("", "password", "password", "password", "login-input") }}
+            </div>
+            <div class="input-wrap">
+                {{ confirmButton("LOGIN", "submit", "submit-btn") }}
+            </div>
+        </form>
+        <div class="join-us-wrap">
+            <span>회원이 되고 싶으신가요?&nbsp;&nbsp;</span>
+            <a href="#">회원가입</a>
+        </div>
+    </article>
+</section>
+{% endblock %}
